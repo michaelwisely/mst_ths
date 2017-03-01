@@ -221,3 +221,8 @@ TSWLatexianTemp*
 
 # nomenclature
 *.nls
+
+# built pdfs
+# All of the proofs in `proofs/` are still tracked.
+*.pdf
+!proofs/*
