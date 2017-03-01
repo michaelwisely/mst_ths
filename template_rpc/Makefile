@@ -15,8 +15,8 @@ foo  = template
 
 # ... bib files - only those accessed ...
 
-biblist = strings.bib lit.bib add.bib
-bibhome = $(HOME)/texmf/bibtex/bib
+biblist = add.bib
+bibhome = $(PWD)
 bibs  := $(addprefix $(bibhome)/,$(biblist))
 
 # ... rules ...
@@ -50,12 +50,12 @@ min : $(foo).tex
 	pdflatex $(foo).tex
 	touch min
 
-clean : 
+clean :
 	-rm -f $(foo).{aux,bbl,blg,dvi,fff,nlo,nls,ilg}
 	-rm -f $(foo).{lof,log,lot,pdf,ps,toc,ttt}
 	-rm -f nobib nonlo min
 
-help : 
+help :
 	@echo "make       -> generate ps from tex"
 	@echo "make nobib -> generate ps from tex (no bib)"
 	@echo "make nonlo -> generate ps from tex (no glo)"
@@ -63,8 +63,3 @@ help :
 	@echo "make clean -> remove all auxiliary files"
 
 # ****** ****** ****** ****** ****** ****** ****** ****** ******
-
-
-
-
-
